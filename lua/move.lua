@@ -18,12 +18,13 @@ if items then
                  print("Items moved")
                  sleep(0.5)
                  print("Awaiting redstone pulse")
-                os.pullEvent("redstone")
-                print("Redstone fired")
+                 os.pullEvent("redstone")
+                 print("Redstone fired")
             else
                 print("More than 5k of this item")
         end
         print()
     end
+    
     items:close()
 end
