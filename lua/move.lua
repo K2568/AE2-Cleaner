@@ -29,3 +29,5 @@ if items then
 
     items:close()
 end
+
+print("Finished")
