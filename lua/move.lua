@@ -6,8 +6,15 @@ if items then
     for line in items:lines() do
         itemId = choice..":"..line
         print(line)
-        num = me.getItem({name=itemId})
+        itemTable = me.getItem({name=itemId})
+        if itemTable == nil then
+            print("Item not found")
+        else
+            num = itemTable["amount"]
+            print(num)
+        end
         me.exportItem({name=itemId, count=num}, "up")
+        print()
     end
     items:close()
 end
