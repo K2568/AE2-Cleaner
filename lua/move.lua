@@ -1,11 +1,12 @@
 me = peripheral.wrap("right")
+relay = peripheral.wrap("left")
 write("Which mod to purge> ")
 local choice = read()
 local items = io.open(choice..".txt", "r")
 if items then
     for line in items:lines() do
         itemId = choice..":"..line
-        print(line)
+        print("Next item: "..line)
         itemTable = me.getItem({name=itemId})
         if itemTable == nil then
             print("Item not found")
@@ -18,7 +19,11 @@ if items then
             else
                 print("More than 5k of this item")
         end
+        sleep(0.5)
         print()
+        print("Awaiting redstone pulse")
+        os.pullEvent("redstone")
+        print("Redstone fired")
     end
     items:close()
 end
