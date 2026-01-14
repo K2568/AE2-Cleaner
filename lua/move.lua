@@ -22,9 +22,10 @@ if items then
                  print("Redstone fired")
             else
                 print("More than 5k of this item")
+            end
         end
         print()
     end
-    
+
     items:close()
 end
