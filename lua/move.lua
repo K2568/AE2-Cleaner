@@ -12,8 +12,12 @@ if items then
         else
             num = itemTable["amount"]
             print(num)
+            if num < 5000 then
+                 me.exportItem({name=itemId, count=num}, "up")
+                 print("Items moved")
+            else
+                print("More than 5k of this item")
         end
-        me.exportItem({name=itemId, count=num}, "up")
         print()
     end
     items:close()
