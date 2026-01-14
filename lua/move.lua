@@ -1,7 +1,7 @@
 me = peripheral.wrap("right")
 write("Which mod to purge> ")
 local choice = read()
-local items = io.open(choice.."txt", "r")
+local items = io.open(choice..".txt", "r")
 if items then
     for line in items:lines() do
         itemId = choice..":"..line
